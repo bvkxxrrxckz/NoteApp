@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using NoteApp;
 
 namespace NoteAppUI
 {
@@ -15,7 +8,26 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
+
+            Project project = new Project();
+            Note note = new Note(
+                "Купить",
+                NoteCategory.Home,
+                "fffpfpfpffp");
+                
+            project.Notes.Add(note);
+
+            note = new Note(
+                "Забрать",
+                NoteCategory.Work,
+                "text test");
+
+            project.Notes.Add(note);
+
+           ProjectManager.Save(ProjectManager._filePath,project);
+
+
+
         }
-        //test commit
     }
 }
