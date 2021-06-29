@@ -1,5 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using NoteApp;
+
+
 
 namespace NoteAppUI
 {
@@ -9,12 +13,13 @@ namespace NoteAppUI
         {
             InitializeComponent();
 
+
             Project project = new Project();
             Note note = new Note(
                 "Купить",
                 NoteCategory.Home,
                 "fffpfpfpffp");
-                
+
             project.Notes.Add(note);
 
             note = new Note(
@@ -24,10 +29,7 @@ namespace NoteAppUI
 
             project.Notes.Add(note);
 
-           ProjectManager.Save(ProjectManager._filePath,project);
-
-
-
+            ProjectManager.Save(ProjectManager._filePath, project);
         }
     }
 }
