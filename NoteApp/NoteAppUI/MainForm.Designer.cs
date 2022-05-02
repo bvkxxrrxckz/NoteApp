@@ -63,7 +63,7 @@ namespace NoteAppUI
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -85,7 +85,7 @@ namespace NoteAppUI
             this.splitContainer1.Panel2.Controls.Add(this.SelectedCategoryLabel);
             this.splitContainer1.Panel2.Controls.Add(this.CategoryLabel);
             this.splitContainer1.Panel2.Controls.Add(this.TitleLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(857, 429);
+            this.splitContainer1.Size = new System.Drawing.Size(857, 425);
             this.splitContainer1.SplitterDistance = 285;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -95,7 +95,7 @@ namespace NoteAppUI
             this.DeleteFileButton.FlatAppearance.BorderSize = 0;
             this.DeleteFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteFileButton.Image = global::NoteAppUI.Properties.Resources.DeleteFile;
-            this.DeleteFileButton.Location = new System.Drawing.Point(90, 393);
+            this.DeleteFileButton.Location = new System.Drawing.Point(90, 389);
             this.DeleteFileButton.Name = "DeleteFileButton";
             this.DeleteFileButton.Size = new System.Drawing.Size(33, 31);
             this.DeleteFileButton.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace NoteAppUI
             this.EditFileButton.FlatAppearance.BorderSize = 0;
             this.EditFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditFileButton.Image = global::NoteAppUI.Properties.Resources.EditFile;
-            this.EditFileButton.Location = new System.Drawing.Point(51, 393);
+            this.EditFileButton.Location = new System.Drawing.Point(51, 389);
             this.EditFileButton.Name = "EditFileButton";
             this.EditFileButton.Size = new System.Drawing.Size(33, 31);
             this.EditFileButton.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace NoteAppUI
             this.AddFileButton.FlatAppearance.BorderSize = 0;
             this.AddFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddFileButton.Image = global::NoteAppUI.Properties.Resources.AddFile;
-            this.AddFileButton.Location = new System.Drawing.Point(12, 393);
+            this.AddFileButton.Location = new System.Drawing.Point(12, 389);
             this.AddFileButton.Name = "AddFileButton";
             this.AddFileButton.Size = new System.Drawing.Size(33, 31);
             this.AddFileButton.TabIndex = 3;
@@ -136,7 +136,7 @@ namespace NoteAppUI
             this.NotesListBox.FormattingEnabled = true;
             this.NotesListBox.Location = new System.Drawing.Point(3, 32);
             this.NotesListBox.Name = "NotesListBox";
-            this.NotesListBox.Size = new System.Drawing.Size(279, 355);
+            this.NotesListBox.Size = new System.Drawing.Size(279, 342);
             this.NotesListBox.TabIndex = 2;
             // 
             // CategoryComboBox
@@ -159,7 +159,7 @@ namespace NoteAppUI
             this.ShowCategoryLabel.AutoSize = true;
             this.ShowCategoryLabel.Location = new System.Drawing.Point(3, 8);
             this.ShowCategoryLabel.Name = "ShowCategoryLabel";
-            this.ShowCategoryLabel.Size = new System.Drawing.Size(85, 13);
+            this.ShowCategoryLabel.Size = new System.Drawing.Size(95, 15);
             this.ShowCategoryLabel.TabIndex = 0;
             this.ShowCategoryLabel.Text = "Show Category: ";
             // 
@@ -173,7 +173,7 @@ namespace NoteAppUI
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(562, 354);
+            this.TextBox.Size = new System.Drawing.Size(562, 350);
             this.TextBox.TabIndex = 3;
             // 
             // ModifiedTimeLabel
@@ -185,7 +185,7 @@ namespace NoteAppUI
             this.ModifiedTimeLabel.Location = new System.Drawing.Point(231, 54);
             this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2);
             this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
-            this.ModifiedTimeLabel.Size = new System.Drawing.Size(53, 13);
+            this.ModifiedTimeLabel.Size = new System.Drawing.Size(61, 15);
             this.ModifiedTimeLabel.TabIndex = 6;
             this.ModifiedTimeLabel.Text = "Modified: ";
             // 
@@ -217,7 +217,7 @@ namespace NoteAppUI
             this.CreatedTimeLabel.AutoSize = true;
             this.CreatedTimeLabel.Location = new System.Drawing.Point(4, 54);
             this.CreatedTimeLabel.Name = "CreatedTimeLabel";
-            this.CreatedTimeLabel.Size = new System.Drawing.Size(50, 13);
+            this.CreatedTimeLabel.Size = new System.Drawing.Size(56, 15);
             this.CreatedTimeLabel.TabIndex = 3;
             this.CreatedTimeLabel.Text = "Created: ";
             // 
@@ -229,7 +229,7 @@ namespace NoteAppUI
             this.SelectedCategoryLabel.AutoSize = true;
             this.SelectedCategoryLabel.Location = new System.Drawing.Point(56, 32);
             this.SelectedCategoryLabel.Name = "SelectedCategoryLabel";
-            this.SelectedCategoryLabel.Size = new System.Drawing.Size(48, 13);
+            this.SelectedCategoryLabel.Size = new System.Drawing.Size(53, 15);
             this.SelectedCategoryLabel.TabIndex = 2;
             this.SelectedCategoryLabel.Text = "category";
             // 
@@ -241,7 +241,7 @@ namespace NoteAppUI
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Location = new System.Drawing.Point(4, 32);
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(55, 13);
+            this.CategoryLabel.Size = new System.Drawing.Size(61, 15);
             this.CategoryLabel.TabIndex = 1;
             this.CategoryLabel.Text = "Category: ";
             // 
@@ -254,19 +254,20 @@ namespace NoteAppUI
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TitleLabel.Location = new System.Drawing.Point(3, 5);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(86, 20);
+            this.TitleLabel.Size = new System.Drawing.Size(105, 25);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "Title Note";
             // 
             // MenuStrip
             // 
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(857, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(857, 28);
             this.MenuStrip.TabIndex = 1;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -275,13 +276,13 @@ namespace NoteAppUI
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitAlrF4ToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitAlrF4ToolStripMenuItem
             // 
             this.exitAlrF4ToolStripMenuItem.Name = "exitAlrF4ToolStripMenuItem";
-            this.exitAlrF4ToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitAlrF4ToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.exitAlrF4ToolStripMenuItem.Text = "Exit Alr+F4";
             // 
             // editToolStripMenuItem
@@ -291,25 +292,25 @@ namespace NoteAppUI
             this.editNoteToolStripMenuItem,
             this.removeNoteDelToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addNoteToolStripMenuItem
             // 
             this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.addNoteToolStripMenuItem.Text = "Add Note";
             // 
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             // 
             // removeNoteDelToolStripMenuItem
             // 
             this.removeNoteDelToolStripMenuItem.Name = "removeNoteDelToolStripMenuItem";
-            this.removeNoteDelToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.removeNoteDelToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.removeNoteDelToolStripMenuItem.Text = "Remove Note Del";
             // 
             // helpToolStripMenuItem
@@ -317,13 +318,13 @@ namespace NoteAppUI
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutF1ToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutF1ToolStripMenuItem
             // 
             this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
-            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.aboutF1ToolStripMenuItem.Text = "About F1";
             // 
             // MainForm

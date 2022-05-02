@@ -220,6 +220,7 @@ namespace NoteAppUI
             aboutForm.ShowDialog();
         }
 
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Перед закрытием приложения запоминаем текущую заметку, чтобы отобразить ее при
