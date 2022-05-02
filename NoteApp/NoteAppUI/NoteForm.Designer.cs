@@ -29,6 +29,7 @@ namespace NoteAppUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
             this.CategoryLabel = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@ namespace NoteAppUI
             this.TextBox = new System.Windows.Forms.TextBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.TitleToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -56,10 +58,12 @@ namespace NoteAppUI
             this.TitleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TitleTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.TitleTextBox.Location = new System.Drawing.Point(70, 21);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(517, 20);
             this.TitleTextBox.TabIndex = 1;
+            this.TitleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
             // 
             // CategoryLabel
             // 
@@ -83,6 +87,7 @@ namespace NoteAppUI
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(195, 21);
             this.CategoryComboBox.TabIndex = 3;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // ModifiedTimeLabel
             // 
@@ -139,6 +144,7 @@ namespace NoteAppUI
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(575, 350);
             this.TextBox.TabIndex = 11;
+            this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // OKButton
             // 
@@ -148,6 +154,7 @@ namespace NoteAppUI
             this.OKButton.TabIndex = 12;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // CancelButton
             // 
@@ -157,6 +164,7 @@ namespace NoteAppUI
             this.CancelButton.TabIndex = 13;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // NoteForm
             // 
@@ -194,5 +202,6 @@ namespace NoteAppUI
         private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ToolTip TitleToolTip;
     }
 }

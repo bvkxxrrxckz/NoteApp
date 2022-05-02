@@ -6,72 +6,93 @@ namespace NoteApp
 {
 	public static class ProjectManager
 	{
-		/// <summary>
-		/// Хранит в себе путь к папке.
-		/// </summary>
-		private static string _folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-								+@"\AlexeyCompany\NoteApp";
+        /// <summary>
+        /// Хранит в себе путь к папке.
+        /// </summary>
+        /// 
+       private const string _nameFile = @"NoteApp.json";
+        public static string _filePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
+                                + @"\AlexeyCompany\NoteApp\"+_nameFile;
 
 		/// <summary>
 		/// Хранит в себе путь к файлу.
 		/// </summary>
-		public static string _filePath = _folder + @"\NoteApp.json";
+		//public static string _filePath = _folder + @"NoteApp.json";
 
 		/// <summary>
 		/// Проверяет создана ли папка. Сохраняет файл.
 		/// </summary>
 		/// <param name="path"></param>
 		/// <param name="project"></param>
-		public static void Save(string path, Project project)
-		{
-			string directory = Path.GetDirectoryName(path);
-			if (!Directory.Exists(directory))
-			{
-				Directory.CreateDirectory(directory);
-			}
-			JsonSerializer serializer = new JsonSerializer();
-			using (StreamWriter sw = new StreamWriter(_filePath))
-			using (JsonWriter writer = new JsonTextWriter(sw))
-			{
-				serializer.Serialize(writer, project);
-			}
-
-		}
-
-		/// <summary>
-		/// Заносим данные с файла.
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns>
-		///Возвращаем все данные файла.
-		/// </returns>
-        public static Project Load(string path)
+		
+        public static void SaveToFile(Project data, string path)
         {
-            Project project = new Project();
-            if (!File.Exists(path))
+            // Если какой-либо каталог (и/или подкаталоги), указанные в пути к файлу,
+            // в который необходимо сохранить данные, не существует, то предварительно
+            // создаем этот каталог (и/или подкаталоги).
+            //
+            if (!Directory.Exists(Path.GetDirectoryName(path)))
             {
-                return project;
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
             }
 
-            try
+            JsonSerializer serializer = new JsonSerializer();
+            ConfigureSettings(serializer);
+
+            using (StreamWriter sw = new StreamWriter(path))
+            using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                using (StreamReader sr = new StreamReader(_filePath))
-                using (JsonReader reader = new JsonTextReader(sr))
-                {
-                    project = (Project) serializer.Deserialize<Project>(reader);
-                    if (project == null)
-                    {
-                        return new Project();
-                    }
-                }
+                serializer.Serialize(writer, data);
             }
-            catch
+        }
+
+
+
+        /// <summary>
+        /// Заносим данные с файла.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns>
+        ///Возвращаем все данные файла.
+        /// </returns>
+        public static Project LoadFromFile(string path)
+        {
+            Project project = null;
+
+            // Если файл, из которого необходимо загрузить данные, не существует, то
+            // возвращаем объект класса Project, созданный конструктором по умолчанию.
+            //
+            if (!File.Exists(path))
             {
                 return new Project();
             }
 
-            return project;
+            JsonSerializer serializer = new JsonSerializer();
+            ConfigureSettings(serializer);
+
+            // В случае возникновения любых исключений в процессе открытия потока для
+            // чтения из файла также возвращаем объект класса Project, созданный
+            // конструктором по умолчанию.
+            //
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                using (JsonReader reader = new JsonTextReader(sr))
+                {
+                    project = serializer.Deserialize<Project>(reader);
+                }
+            }
+            catch (Exception)
+            {
+                return new Project();
+            }
+
+            // Метод в любом случае должен возвращать объект класса Project.
+            return project ?? new Project();
+        }
+        private static void ConfigureSettings(JsonSerializer serializer)
+        {
+            serializer.Formatting = Formatting.Indented;
         }
 
     }

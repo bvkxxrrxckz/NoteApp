@@ -30,10 +30,16 @@ namespace NoteAppUI
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.DeleteFileButton = new System.Windows.Forms.Button();
+            this.EditFileButton = new System.Windows.Forms.Button();
+            this.AddFileButton = new System.Windows.Forms.Button();
             this.NotesListBox = new System.Windows.Forms.ListBox();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.ShowCategoryLabel = new System.Windows.Forms.Label();
             this.TextBox = new System.Windows.Forms.TextBox();
+            this.ModifiedTimeLabel = new System.Windows.Forms.Label();
+            this.ModificationTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.CreationTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.CreatedTimeLabel = new System.Windows.Forms.Label();
             this.SelectedCategoryLabel = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
@@ -47,12 +53,6 @@ namespace NoteAppUI
             this.removeNoteDelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ModifiedTimeLabel = new System.Windows.Forms.Label();
-            this.ModificationTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CreationTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DeleteFileButton = new System.Windows.Forms.Button();
-            this.EditFileButton = new System.Windows.Forms.Button();
-            this.AddFileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,6 +89,45 @@ namespace NoteAppUI
             this.splitContainer1.SplitterDistance = 285;
             this.splitContainer1.TabIndex = 0;
             // 
+            // DeleteFileButton
+            // 
+            this.DeleteFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DeleteFileButton.FlatAppearance.BorderSize = 0;
+            this.DeleteFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteFileButton.Image = global::NoteAppUI.Properties.Resources.DeleteFile;
+            this.DeleteFileButton.Location = new System.Drawing.Point(90, 393);
+            this.DeleteFileButton.Name = "DeleteFileButton";
+            this.DeleteFileButton.Size = new System.Drawing.Size(33, 31);
+            this.DeleteFileButton.TabIndex = 5;
+            this.DeleteFileButton.UseVisualStyleBackColor = true;
+            this.DeleteFileButton.Click += new System.EventHandler(this.DeleteFileButton_Click);
+            // 
+            // EditFileButton
+            // 
+            this.EditFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditFileButton.FlatAppearance.BorderSize = 0;
+            this.EditFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditFileButton.Image = global::NoteAppUI.Properties.Resources.EditFile;
+            this.EditFileButton.Location = new System.Drawing.Point(51, 393);
+            this.EditFileButton.Name = "EditFileButton";
+            this.EditFileButton.Size = new System.Drawing.Size(33, 31);
+            this.EditFileButton.TabIndex = 4;
+            this.EditFileButton.UseVisualStyleBackColor = true;
+            this.EditFileButton.Click += new System.EventHandler(this.EditFileButton_Click);
+            // 
+            // AddFileButton
+            // 
+            this.AddFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddFileButton.FlatAppearance.BorderSize = 0;
+            this.AddFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddFileButton.Image = global::NoteAppUI.Properties.Resources.AddFile;
+            this.AddFileButton.Location = new System.Drawing.Point(12, 393);
+            this.AddFileButton.Name = "AddFileButton";
+            this.AddFileButton.Size = new System.Drawing.Size(33, 31);
+            this.AddFileButton.TabIndex = 3;
+            this.AddFileButton.UseVisualStyleBackColor = true;
+            this.AddFileButton.Click += new System.EventHandler(this.AddFileButton_Click);
+            // 
             // NotesListBox
             // 
             this.NotesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -110,6 +149,7 @@ namespace NoteAppUI
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(197, 21);
             this.CategoryComboBox.TabIndex = 1;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // ShowCategoryLabel
             // 
@@ -128,11 +168,46 @@ namespace NoteAppUI
             this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBox.BackColor = System.Drawing.SystemColors.Control;
             this.TextBox.Location = new System.Drawing.Point(3, 72);
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
+            this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox.Size = new System.Drawing.Size(562, 354);
             this.TextBox.TabIndex = 3;
+            // 
+            // ModifiedTimeLabel
+            // 
+            this.ModifiedTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ModifiedTimeLabel.AutoSize = true;
+            this.ModifiedTimeLabel.Location = new System.Drawing.Point(231, 54);
+            this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2);
+            this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
+            this.ModifiedTimeLabel.Size = new System.Drawing.Size(53, 13);
+            this.ModifiedTimeLabel.TabIndex = 6;
+            this.ModifiedTimeLabel.Text = "Modified: ";
+            // 
+            // ModificationTimeDateTimePicker
+            // 
+            this.ModificationTimeDateTimePicker.CustomFormat = "dd.MM.yy  HH:mm";
+            this.ModificationTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ModificationTimeDateTimePicker.Location = new System.Drawing.Point(289, 48);
+            this.ModificationTimeDateTimePicker.Name = "ModificationTimeDateTimePicker";
+            this.ModificationTimeDateTimePicker.Size = new System.Drawing.Size(130, 20);
+            this.ModificationTimeDateTimePicker.TabIndex = 5;
+            // 
+            // CreationTimeDateTimePicker
+            // 
+            this.CreationTimeDateTimePicker.CustomFormat = "dd.MM.yy  HH:mm";
+            this.CreationTimeDateTimePicker.Enabled = false;
+            this.CreationTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.CreationTimeDateTimePicker.Location = new System.Drawing.Point(59, 48);
+            this.CreationTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.CreationTimeDateTimePicker.Name = "CreationTimeDateTimePicker";
+            this.CreationTimeDateTimePicker.Size = new System.Drawing.Size(130, 20);
+            this.CreationTimeDateTimePicker.TabIndex = 4;
             // 
             // CreatedTimeLabel
             // 
@@ -250,75 +325,6 @@ namespace NoteAppUI
             this.aboutF1ToolStripMenuItem.Name = "aboutF1ToolStripMenuItem";
             this.aboutF1ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutF1ToolStripMenuItem.Text = "About F1";
-            // 
-            // ModifiedTimeLabel
-            // 
-            this.ModifiedTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ModifiedTimeLabel.AutoSize = true;
-            this.ModifiedTimeLabel.Location = new System.Drawing.Point(231, 54);
-            this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2);
-            this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
-            this.ModifiedTimeLabel.Size = new System.Drawing.Size(53, 13);
-            this.ModifiedTimeLabel.TabIndex = 6;
-            this.ModifiedTimeLabel.Text = "Modified: ";
-            // 
-            // ModificationTimeDateTimePicker
-            // 
-            this.ModificationTimeDateTimePicker.CustomFormat = "dd.MM.yy  HH:mm";
-            this.ModificationTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ModificationTimeDateTimePicker.Location = new System.Drawing.Point(289, 48);
-            this.ModificationTimeDateTimePicker.Name = "ModificationTimeDateTimePicker";
-            this.ModificationTimeDateTimePicker.Size = new System.Drawing.Size(130, 20);
-            this.ModificationTimeDateTimePicker.TabIndex = 5;
-            // 
-            // CreationTimeDateTimePicker
-            // 
-            this.CreationTimeDateTimePicker.CustomFormat = "dd.MM.yy  HH:mm";
-            this.CreationTimeDateTimePicker.Enabled = false;
-            this.CreationTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CreationTimeDateTimePicker.Location = new System.Drawing.Point(59, 48);
-            this.CreationTimeDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.CreationTimeDateTimePicker.Name = "CreationTimeDateTimePicker";
-            this.CreationTimeDateTimePicker.Size = new System.Drawing.Size(130, 20);
-            this.CreationTimeDateTimePicker.TabIndex = 4;
-            // 
-            // DeleteFileButton
-            // 
-            this.DeleteFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DeleteFileButton.FlatAppearance.BorderSize = 0;
-            this.DeleteFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteFileButton.Image = global::NoteAppUI.Properties.Resources.DeleteFile;
-            this.DeleteFileButton.Location = new System.Drawing.Point(90, 393);
-            this.DeleteFileButton.Name = "DeleteFileButton";
-            this.DeleteFileButton.Size = new System.Drawing.Size(33, 31);
-            this.DeleteFileButton.TabIndex = 5;
-            this.DeleteFileButton.UseVisualStyleBackColor = true;
-            // 
-            // EditFileButton
-            // 
-            this.EditFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditFileButton.FlatAppearance.BorderSize = 0;
-            this.EditFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditFileButton.Image = global::NoteAppUI.Properties.Resources.EditFile;
-            this.EditFileButton.Location = new System.Drawing.Point(51, 393);
-            this.EditFileButton.Name = "EditFileButton";
-            this.EditFileButton.Size = new System.Drawing.Size(33, 31);
-            this.EditFileButton.TabIndex = 4;
-            this.EditFileButton.UseVisualStyleBackColor = true;
-            // 
-            // AddFileButton
-            // 
-            this.AddFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddFileButton.FlatAppearance.BorderSize = 0;
-            this.AddFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddFileButton.Image = global::NoteAppUI.Properties.Resources.AddFile;
-            this.AddFileButton.Location = new System.Drawing.Point(12, 393);
-            this.AddFileButton.Name = "AddFileButton";
-            this.AddFileButton.Size = new System.Drawing.Size(33, 31);
-            this.AddFileButton.TabIndex = 3;
-            this.AddFileButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
