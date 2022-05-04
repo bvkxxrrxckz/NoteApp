@@ -77,7 +77,7 @@ namespace NoteApp.Model
                 return _category;
             }
 
-            set
+             set
             {
                 _category = value;
                 ModificationTime = DateTime.Now;
@@ -120,19 +120,8 @@ namespace NoteApp.Model
         /// <summary>
         /// Возвращает и задает время последнего изменения заметки.
         /// </summary>
-        public DateTime ModificationTime 
-        { 
-            get
-            {
-                return _modificationTime;
-            }
-
-            set
-            {
-                _modificationTime = value;
-            }
-        }
-
+        public DateTime ModificationTime { get; private set; }
+       
         /// <summary>
         /// Создает экземпляр <see cref="Note"/>.
         /// </summary>
